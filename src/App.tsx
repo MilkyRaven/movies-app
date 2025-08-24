@@ -1,12 +1,11 @@
 import './App.css'
-import MovieCard from './components/MovieCard'
+import MoviesList from './components/MoviesList'
+import movies from './data/movies.json'
 
 function App() {
-
-
   return (
     <>
-      <MovieCard />
+      <MoviesList movies={movies} />
     </>
   )
 }
