@@ -4,13 +4,14 @@ import "./styles.css";
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
-  children?: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const modalRoot = document.getElementById("modal-root");
 
 function Modal({ isOpen, children, onClose }: ModalProps) {
   if (!isOpen) return null;
+  if (!modalRoot) return null;
 
   return createPortal(
     <div className="overlay">
@@ -21,7 +22,7 @@ function Modal({ isOpen, children, onClose }: ModalProps) {
         <div>{children}</div>
       </div>
     </div>,
-    modalRoot!
+    modalRoot
   );
 }
 
