@@ -16,3 +16,11 @@ export function getFromLocalStorage<T>(key: string): T | null {
     return null;
   }
 }
+
+export function removeFromLocalStorage(key: string): void {
+  try {
+    localStorage.removeItem(key);
+  } catch (error) {
+    console.error("Error removing from localStorage", error);
+  }
+}
